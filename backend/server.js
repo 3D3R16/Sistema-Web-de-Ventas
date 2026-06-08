@@ -1,4 +1,4 @@
-// Carga las variables de entorno desde el archivo .env (debe ir primero).
+// Carga las variables de entorno desde el archivo .env
 require('dotenv').config();
 
 const express = require('express');
@@ -18,7 +18,7 @@ app.use(express.json());
 
 // ----- Ruta de prueba (health check) -----
 app.get('/', (req, res) => {
-  res.json({ mensaje: 'API TechStore funcionando 🚀' });
+  res.json({ mensaje: 'API TechStore funcionando' });
 });
 
 // ----- Rutas de la API -----
@@ -31,4 +31,4 @@ app.use('/', require('./routes/auth'));
 // ----- Arranque del servidor -----
 // Render asigna el puerto mediante process.env.PORT.
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Servidor escuchando en el puerto ${PORT}`));
+app.listen(PORT, () => console.log(`ervidor escuchando en el puerto ${PORT}`));
