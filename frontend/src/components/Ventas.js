@@ -83,7 +83,7 @@ function Ventas() {
     setCarrito(carrito.filter((l) => l.productoId !== id));
   };
 
-  // Total calculado automáticamente en el frontend (el backend lo recalcula también).
+  // Total calculado automáticamente.
   const total = carrito.reduce((suma, l) => suma + l.precio * l.cantidad, 0);
 
   // Registra la venta.
@@ -198,7 +198,7 @@ function Ventas() {
       {/* Ticket de la última venta */}
       {ticket && (
         <div className="ticket">
-          <h3>🧾 Ticket de venta</h3>
+          <h3>Ticket de venta</h3>
           <p className="ticket__brand">TechStore</p>
           <p className="ticket__meta">Fecha: {new Date(ticket.fecha).toLocaleString()}</p>
           <p className="ticket__meta">Cliente: {ticket.clienteId?.nombre}</p>
