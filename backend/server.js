@@ -11,10 +11,10 @@ const app = express();
 conectarDB();
 
 // ----- Middlewares -----
-// CORS habilitado para que el frontend (Vercel) pueda llamar a esta API (Render).
-// Para mayor seguridad podrías limitarlo así:
-//   app.use(cors({ origin: 'https://tu-app.vercel.app' }));
-app.use(cors());
+// CORS restringido: la API (Render) solo acepta peticiones desde el
+// frontend desplegado en Vercel. El header Origin del navegador no lleva
+// barra final ni ruta, por eso se usa el dominio exacto sin "/" al final.
+app.use(cors({ origin: 'https://sistema-web-de-ventas-yy13.vercel.app' }));
 
 // Permite recibir y leer JSON en el cuerpo de las peticiones.
 app.use(express.json());
