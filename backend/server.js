@@ -10,11 +10,8 @@ const app = express();
 // Conectar a MongoDB Atlas.
 conectarDB();
 
-// ----- Middlewares -----
-// CORS restringido: la API (Render) solo acepta peticiones desde el
-// frontend desplegado en Vercel. El header Origin del navegador no lleva
-// barra final ni ruta, por eso se usa el dominio exacto sin "/" al final.
-app.use(cors({ origin: 'https://sistema-web-de-ventas-yy13.vercel.app' }));
+
+app.use(cors({ origin: 'https://sistema-web-de-ventas.vercel.app' }));
 
 // Permite recibir y leer JSON en el cuerpo de las peticiones.
 app.use(express.json());
